@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="hint">Ketuk planet utk lihat info</div>
+<button id="btnMain">🎮 Misi</button>
+<button id="btnKec">1×</button>
+<button id="btnMusik">🔇</button>
+<button id="btnKapal">🚀</button>
+
+<div id="kapalUI" style="display:none">
+  <div id="stick"><div id="knob"></div></div>
+  <button id="rem" class="kBtn" style="right:96px">REM</button>
+  <button id="gas" class="kBtn" style="right:12px">GAS</button>
+  <div id="laju">0%</div>
+</div>
+<div id="game">
+  <div id="gStat"></div>
+  <div id="gClue"></div>
+  <div id="gMsg"></div>
+  <button id="gLanjut" style="display:none"></button>
+  <button id="gKeluar" class="sekunder">Keluar</button>
+</div>
+<div id="panel">
+  <h2 id="pNama"></h2>
+  <div class="baris" id="pJarak"></div>
+  <div class="baris" id="pDiameter"></div>
+  <div class="baris" id="pTahun"></div>
+  <div class="fakta" id="pFakta"></div>
+  <button id="pTutup">Lihat semua</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/sun.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/planets.js"></script>
+<script src="js/kuiper-comet.js"></script>
+<script src="js/spaceship.js"></script>
+<script src="js/interaction.js"></script>
+<script src="js/music.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/extras.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
