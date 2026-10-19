@@ -38,9 +38,10 @@ Buka lewat server (bukan langsung dari file), misalnya GitHub Pages atau `python
 - [Three.js](https://threejs.org/) r128
 
 **Demo langsung:** https://rafi-ramadhan-999.github.io/solar-odyssey/
-![Tampilan tata surya](screenshots/tata-surya.png)
+
+![Tampilan tata surya](screenshots/tata-surya.jpg)
 
 
 
 
-![Panel info planet](screenshots/info-planet.png)
+![Panel info planet](screenshots/info-planet.jpg)
