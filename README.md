@@ -39,9 +39,9 @@ Buka lewat server (bukan langsung dari file), misalnya GitHub Pages atau `python
 
 **Demo langsung:** https://rafi-ramadhan-999.github.io/solar-odyssey/
 
-![Tampilan tata surya](screenshots/tata-surya.jpg)
+![Tampilan tata surya](tata-surya.jpg)
 
 
 
 
-![Panel info planet](screenshots/info-planet.jpg)
+![Panel info planet](info-planet.jpg)
