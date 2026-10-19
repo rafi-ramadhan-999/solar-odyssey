@@ -35,3 +35,5 @@ Buka lewat server (bukan langsung dari file), misalnya GitHub Pages atau `python
 ## Kredit
 - Tekstur planet: [Solar System Scope](https://www.solarsystemscope.com/textures/), lisensi CC BY 4.0
 - [Three.js](https://threejs.org/) r128
+
+**Demo langsung:** https://rafi-ramadhan-999.github.io/solar-odyssey/
