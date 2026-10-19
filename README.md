@@ -9,6 +9,7 @@ Simulasi tata surya 3D interaktif yang berjalan di browser (dibuat di HP dengan 
 - Pesawat yang bisa diterbangkan (joystick sentuh), lengkap dengan tabrakan
 - Satelit buatan di sekitar Bumi, cincin tipis planet raksasa
 - Musik dan efek suara yang dibuat lewat kode (Web Audio), tanpa file audio
+- Planet 9 sebagai planet hipotesis
 
 ## Struktur
 ```
@@ -37,3 +38,9 @@ Buka lewat server (bukan langsung dari file), misalnya GitHub Pages atau `python
 - [Three.js](https://threejs.org/) r128
 
 **Demo langsung:** https://rafi-ramadhan-999.github.io/solar-odyssey/
+![Tampilan tata surya](screenshots/tata-surya.png)
+
+
+
+
+![Panel info planet](screenshots/info-planet.png)
