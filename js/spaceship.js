@@ -15,6 +15,7 @@ kapal.visible = false;
 scene.add(kapal);
 
 let shipAktif = false, laju = 0, sx = 0, sy = 0, gas = false, rem = false;
+let boost = false, auto = false, jarakKam = 2.2;
 const kapalUI = document.getElementById('kapalUI');
 const btnKapal = document.getElementById('btnKapal');
 const elLaju = document.getElementById('laju');
@@ -25,7 +26,7 @@ function geserStick(e) {
   const r = stick.getBoundingClientRect();
   let dx = e.clientX - (r.left + r.width / 2);
   let dy = e.clientY - (r.top + r.height / 2);
-  const m = Math.hypot(dx, dy), R = 45;
+  const m = Math.hypot(dx, dy), R = r.width * 0.32;
   if (m > R) { dx *= R / m; dy *= R / m; }
   sx = dx / R; sy = -dy / R;   // sy positif = dorong ke atas = hidung naik
   knob.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
@@ -43,6 +44,15 @@ function tahan(id, set) {
 }
 tahan('gas', (v) => gas = v);
 tahan('rem', (v) => rem = v);
+tahan('boost', (v) => boost = v);
+const KAMERA = [2.2, 3.5, 5.5];
+let idxKam = 0;
+document.getElementById('auto').addEventListener('click', (e) => { auto = !auto; e.currentTarget.classList.toggle('aktif', auto); });
+document.getElementById('kamera').addEventListener('click', () => { idxKam = (idxKam + 1) % KAMERA.length; jarakKam = KAMERA[idxKam]; });
+document.getElementById('lurus').addEventListener('click', () => {
+  const d = new THREE.Vector3(0, 0, -1).applyQuaternion(kapal.quaternion);
+  kapal.quaternion.setFromRotationMatrix(new THREE.Matrix4().lookAt(new THREE.Vector3(), d, new THREE.Vector3(0, 1, 0)));
+});
 
 // Saat terbang, ketukan di layar tidak boleh membuka panel info
 renderer.domElement.addEventListener('pointerup', (e) => { if (shipAktif) e.stopImmediatePropagation(); });
@@ -80,9 +90,11 @@ btnKapal.addEventListener('click', () => {
 function updateKapal() {
   kapal.rotateY(-sx * 0.03);   // belok kiri-kanan
   kapal.rotateX(sy * 0.025);   // hidung naik-turun
-  if (gas) laju = Math.min(laju + 0.01, 1.0);
-  if (rem) laju = Math.max(laju - 0.02, 0);
-  laju *= 0.998;
+ const maks = boost ? 3.0 : 1.0;
+  if (laju > maks) laju = Math.max(maks, laju - 0.03);   // turun pelan setelah BOOST dilepas
+  else if (gas || boost) laju = Math.min(maks, laju + (boost ? 0.03 : 0.01));
+  if (rem) laju = Math.max(laju - 0.04, 0);
+  if (!auto) laju *= 0.998;   // AUTO: laju dikunci, tidak melambat sendiri
   const depan = new THREE.Vector3(0, 0, -1).applyQuaternion(kapal.quaternion);
   kapal.position.addScaledVector(depan, laju);
 
@@ -91,10 +103,11 @@ function updateKapal() {
   if (dM > 120) kapal.position.setLength(120);                    // batas wilayah terbang
 
   // Kamera mengejar dari belakang
-  const target = new THREE.Vector3(0, 0.5, 2.2).applyQuaternion(kapal.quaternion).add(kapal.position);
+  const atas = new THREE.Vector3(0, 1, 0).applyQuaternion(kapal.quaternion);
+  const target = new THREE.Vector3(0, jarakKam * 0.25, jarakKam).applyQuaternion(kapal.quaternion).add(kapal.position);
   camera.position.lerp(target, 0.2);
-  camera.up.set(0, 1, 0).applyQuaternion(kapal.quaternion);
-  camera.lookAt(kapal.position.clone().addScaledVector(depan, 3));
+  camera.up.copy(atas);
+  camera.lookAt(kapal.position.clone().addScaledVector(depan, 3).addScaledVector(atas, jarakKam * 0.35));
 
   mesin.scale.setScalar(0.3 + laju * 1.2);
   elLaju.textContent = 'Laju ' + Math.round(laju * 100) + '%';

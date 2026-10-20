@@ -11,6 +11,15 @@ Simulasi tata surya 3D interaktif yang berjalan di browser (dibuat di HP dengan 
 - Musik dan efek suara yang dibuat lewat kode (Web Audio), tanpa file audio
 - Planet 9 sebagai planet hipotesis
 
+## Kontrol pesawat
+Ketuk tombol 🚀 untuk mulai terbang, lalu:
+- **Joystick (kiri bawah):** belok dan naik-turun
+- **GAS / REM:** tambah atau kurangi laju (tahan)
+- **BOOST:** laju sampai 3× (tahan)
+- **AUTO:** kunci laju supaya tidak perlu menahan GAS
+- **LURUS:** meluruskan kemiringan pesawat
+- **📷:** ganti jarak kamera
+
 ## Struktur
 ```
 index.html

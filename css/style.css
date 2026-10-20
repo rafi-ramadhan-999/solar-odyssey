@@ -23,12 +23,19 @@ body{margin:0;background:#000;overflow:hidden;font-family:system-ui,sans-serif}
 #game button.sekunder{background:#444}
 #btnKapal{position:fixed;top:8px;left:104px;width:44px;height:44px;border-radius:50%;
   background:rgba(10,12,25,.8);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:18px}
-#stick{position:fixed;left:18px;bottom:24px;width:110px;height:110px;border-radius:50%;
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);touch-action:none}
-#knob{position:absolute;left:35px;top:35px;width:40px;height:40px;border-radius:50%;
+#stick{position:fixed;left:3vmin;bottom:4vmin;width:clamp(110px,30vmin,240px);height:clamp(110px,30vmin,240px);
+  border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);touch-action:none}
+#knob{position:absolute;left:32%;top:32%;width:36%;height:36%;border-radius:50%;
   background:rgba(255,255,255,.5);pointer-events:none}
-.kBtn{position:fixed;bottom:40px;width:76px;height:76px;border-radius:50%;
+#kKanan{position:fixed;right:3vmin;bottom:4vmin;display:grid;grid-template-columns:repeat(2,auto);gap:2vmin}
+.kBtn{width:clamp(76px,22vmin,170px);height:clamp(76px,22vmin,170px);border-radius:50%;
   background:rgba(42,111,219,.6);color:#fff;border:1px solid rgba(255,255,255,.4);
-  font-size:15px;touch-action:none}
+  font-size:clamp(14px,3.2vmin,26px);touch-action:none}
+.kBtn.kSedang{height:clamp(46px,12vmin,96px);border-radius:999px;background:rgba(80,80,100,.65);
+  font-size:clamp(12px,2.8vmin,22px)}
+.kBtn.aktif{background:rgba(255,160,40,.85)}
+#kKiri{position:fixed;left:3vmin;bottom:calc(clamp(110px,30vmin,240px) + 6vmin);display:flex;gap:2vmin}
+.kKecil{height:clamp(40px,9vmin,72px);padding:0 14px;border-radius:999px;background:rgba(10,12,25,.8);
+  color:#fff;border:1px solid rgba(255,255,255,.3);font-size:clamp(12px,2.8vmin,22px);touch-action:none}
 #laju{position:fixed;top:62px;left:0;right:0;text-align:center;color:#fff;
   font-size:14px;opacity:.8;pointer-events:none}
