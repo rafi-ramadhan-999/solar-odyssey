@@ -36,6 +36,7 @@ renderer.domElement.addEventListener('pointerup', (e) => {
   const geser = Math.hypot(e.clientX - awalX, e.clientY - awalY);
   const lama = performance.now() - awalWaktu;
   if (geser > 8 || lama > 400) return;
+  if (modeTaruh) return;   // sedang menaruh lubang hitam (lihat kacau.js)
 
   titik.x = (e.clientX / innerWidth) * 2 - 1;
   titik.y = -(e.clientY / innerHeight) * 2 + 1;

@@ -227,7 +227,7 @@ function updateTambahan(k) {
   const kp = kapal.position;
 
   tabrakBola('Matahari', _w.set(0, 0, 0).clone(), 2.65);
-  planetPlanet.forEach((p, i) => tabrakBola(dataPlanet[i].nama, p.badan.position, dataPlanet[i].ukuran + 0.12));
+  planetPlanet.forEach((p, i) => { if (p.badan.visible) tabrakBola(dataPlanet[i].nama, p.badan.position, dataPlanet[i].ukuran * p.badan.scale.x + 0.12); });
 
   for (const b of batuan) {   // asteroid: terpental pelan
     const d = kp.distanceTo(b.g.position), r = b.r + 0.1;

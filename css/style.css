@@ -39,3 +39,21 @@ body{margin:0;background:#000;overflow:hidden;font-family:system-ui,sans-serif}
   color:#fff;border:1px solid rgba(255,255,255,.3);font-size:clamp(12px,2.8vmin,22px);touch-action:none}
 #laju{position:fixed;top:62px;left:0;right:0;text-align:center;color:#fff;
   font-size:14px;opacity:.8;pointer-events:none}
+
+#btnFoto,#btnKacau{position:fixed;right:8px;width:44px;height:44px;border-radius:50%;
+  background:rgba(10,12,25,.8);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:20px}
+#btnFoto{top:60px}
+#btnKacau{top:112px}
+#btnKacau.aktif,#menuKacau button.aktif{background:rgba(255,160,40,.85)}
+#menuKacau{position:fixed;top:112px;right:60px;width:min(230px,calc(100vw - 76px));display:none;
+  background:rgba(10,12,25,.92);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:10px}
+#menuKacau button{display:block;width:100%;margin:0 0 6px;padding:10px;border:0;border-radius:8px;
+  background:#2a6fdb;color:#fff;font-size:14px;text-align:left}
+#menuKacau label{display:block;font-size:12px;opacity:.8;margin:8px 0 2px}
+#menuKacau input{width:100%}
+#fotoModal{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;z-index:40}
+#fotoImg{max-width:92vw;max-height:70vh;border-radius:10px;border:1px solid rgba(255,255,255,.25)}
+#fotoAksi{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.fBtn{background:#2a6fdb;color:#fff;border:0;border-radius:10px;padding:11px 16px;font-size:15px;text-decoration:none}
+.fBtn.sek{background:#444}

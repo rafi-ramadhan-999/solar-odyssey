@@ -10,6 +10,11 @@ Simulasi tata surya 3D interaktif yang berjalan di browser (dibuat di HP dengan 
 - Satelit buatan di sekitar Bumi, cincin tipis planet raksasa
 - Musik dan efek suara yang dibuat lewat kode (Web Audio), tanpa file audio
 - Planet 9 sebagai planet hipotesis
+- **📸 Foto pemandangan:** ambil gambar tampilan saat ini (termasuk dari kokpit pesawat), lalu unduh atau bagikan sebagai PNG
+- **🌀 Acak-acak planet:**
+  - *Gravitasi Liar*: planet lepas dari orbit rel, saling tarik (N-body), bisa bertabrakan dan bergabung, jatuh ke Matahari, atau terlempar. Jejak orbit tampil
+  - *Lubang Hitam*: ketuk bidang orbit untuk menaruh (maks. 3), planet melengkung, mengecil, lalu tertelan
+  - *Pulihkan* mengembalikan orbit normal, slider mengatur kekuatan tarikan
 
 ## Kontrol pesawat
 Ketuk tombol 🚀 untuk mulai terbang, lalu:
@@ -35,6 +40,8 @@ js/            dimuat berurutan sesuai index.html
   music.js         musik latar
   quiz.js          mode misi
   extras.js        asteroid, komet tambahan, satelit, suara, tabrakan
+  foto.js          tombol 📸, pratinjau, unduh/bagikan
+  kacau.js         gravitasi liar, lubang hitam, jejak orbit
   main.js          loop animasi
 tekstur/       taruh file tekstur di sini (lihat tekstur/README.md)
 ```

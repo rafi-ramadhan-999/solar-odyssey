@@ -12,6 +12,23 @@
 <button id="btnKec">1×</button>
 <button id="btnMusik">🔇</button>
 <button id="btnKapal">🚀</button>
+<button id="btnFoto" title="Foto pemandangan">📸</button>
+<button id="btnKacau" title="Acak-acak planet">🌀</button>
+<div id="menuKacau">
+  <button id="bGrav">🌀 Gravitasi Liar</button>
+  <button id="bLubang">🕳️ Taruh Lubang Hitam</button>
+  <button id="bPulih">♻️ Pulihkan</button>
+  <label id="kKuatLabel" for="kKuat">Kekuatan: 1.0×</label>
+  <input type="range" id="kKuat" min="0.5" max="3" step="0.1" value="1">
+</div>
+<div id="fotoModal">
+  <img id="fotoImg" alt="Foto tata surya">
+  <div id="fotoAksi">
+    <a id="fotoUnduh" class="fBtn">⬇ Unduh</a>
+    <button id="fotoBagi" class="fBtn" style="display:none">↗ Bagikan</button>
+    <button id="fotoTutup" class="fBtn sek">Tutup</button>
+  </div>
+</div>
 
 <div id="kapalUI" style="display:none">
   <div id="stick"><div id="knob"></div></div>
@@ -55,6 +72,8 @@
 <script src="js/music.js"></script>
 <script src="js/quiz.js"></script>
 <script src="js/extras.js"></script>
+<script src="js/foto.js"></script>
+<script src="js/kacau.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

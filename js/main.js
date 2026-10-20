@@ -5,6 +5,7 @@ function loop(){
   matahari.rotation.y += 0.002 * k;
 
   for (const p of planetPlanet) {
+    if (p.bebas) { p.bola.rotation.y += p.putar * k; continue; }   // digerakkan kacau.js
     // Hukum Kepler: makin dekat Matahari, makin cepat
     const f = Math.pow(1 + p.e * Math.cos(p.sudut), 2) / Math.pow(1 - p.e * p.e, 1.5);
     p.sudut += p.orbit * f * k;
@@ -17,6 +18,7 @@ function loop(){
   sabuk.rotation.y += 0.0008 * k;
   sabukKuiper.rotation.y += 0.0003 * k;
   updateKomet(k);
+  updateKacau(k);
   updateTambahan(k);
   if (shipAktif) { updateKapal(); renderer.render(scene, camera); return; }
 
